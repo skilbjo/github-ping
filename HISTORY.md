@@ -1,9 +1,9 @@
 # ping
 
 ## HISTORICAL ITERATION
-2002-11-16
+2002-11-17
 
-Incremented: 1993
+Incremented: 1994
 
 ## What is this?? 
 Linux skills to hack the github commit visualization chart `;-)`
