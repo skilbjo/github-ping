@@ -2,7 +2,7 @@
 
 generate_dates() {
   year=$1
-	start=$(gdate -d $year-01-01 +'%Y%m%d')
+	start=$(gdate -d 2000-01-01 +'%Y%m%d')
 	end=$(gdate -d $year-12-31 +'%Y%m%d')
 
   local result=()	
@@ -26,6 +26,6 @@ push_github() {
   done
 }
 
-generate_dates 2014
+generate_dates 2013
 
 exit 0
