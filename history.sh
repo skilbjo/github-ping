@@ -26,6 +26,6 @@ push_github() {
   done
 }
 
-generate_dates 2014
+generate_dates 2013
 
 exit 0
