@@ -2,7 +2,7 @@
 
 generate_dates() {
   year=$1
-	start=$(gdate -d 2000-01-01 +'%Y%m%d')
+	start=$(gdate -d $year-01-01 +'%Y%m%d')
 	end=$(gdate -d $year-12-31 +'%Y%m%d')
 
   local result=()	
@@ -21,11 +21,11 @@ push_github() {
   for d in ${result[@]}; do
     sed -i '' 's/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/'$d'/g' HISTORY.md
     perl -pi -e 's/(Incremented: )([0-9]+)/"Incremented: ".($2+1)/e' HISTORY.md
-    git commit --date="$d" -am "'$d'" ;
+    git commit --date="$d" -am "'$d'" ; git push
 
   done
 }
 
-generate_dates 2013
+generate_dates 2014
 
 exit 0
