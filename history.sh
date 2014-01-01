@@ -21,11 +21,11 @@ push_github() {
   for d in ${result[@]}; do
     sed -i '' 's/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/'$d'/g' HISTORY.md
     perl -pi -e 's/(Incremented: )([0-9]+)/"Incremented: ".($2+1)/e' HISTORY.md
-    git commit --date="$d" -am "'$d'" ; git push
+    git commit --date="$d" -am "'$d'" ;
 
   done
 }
 
-generate_dates 2015
+generate_dates 2014
 
 exit 0
