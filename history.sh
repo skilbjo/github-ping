@@ -2,8 +2,8 @@
 
 generate_dates() {
   year=$1
-	start=$(gdate -d $year-03-25 +'%Y%m%d')
-	end=$(gdate -d $year-12-31 +'%Y%m%d')
+	start=$(gdate -d $year-01-01 +'%Y%m%d')
+	end=$(gdate -d $year-03-25 +'%Y%m%d')
 
   local result=()	
 
