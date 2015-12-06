@@ -1,10 +1,7 @@
 #!/bin/bash
 
-eval `ssh-agent -s`
+sed -i '' 's/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/'$(date +%Y-%m-%d)'/g' README.md
+perl -p -e 's/(Incremented: )([0-9]+)/"Incremented: ".($2+1)/ge' README.md
 
-echo -n '# ' >> README.md 
-date +'%m-%d-%Y' >> README.md
-git commit -am 'auto' ; git push
-
-kill $SSH_AGENT_PID
+git commit -am "'$(date +%Y-%m-%d)'" ; git push
 
