@@ -1,0 +1,15 @@
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games"
+MAILTO=john.skilbeck@gmail.com
+PING="/home/pi/node/app/ping"
+
+### APPS
+0 2 * * * cd $PING ; ./ping.sh >/dev/null 2>&1
+
+### SYSADMIN
+* * * * * ping -c 1 192.168.1.1 >/dev/null 2>&1
+
+
+
+
+
+
