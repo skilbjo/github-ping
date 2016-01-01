@@ -41,6 +41,6 @@ push_github() {
   done
 }
 
-generate_dates_linux 2016
+generate_dates_mac 2016
 
 exit 0
