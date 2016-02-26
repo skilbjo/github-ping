@@ -1,9 +1,9 @@
 # ping
 
 ## Last updated
-2016-02-25
+2016-02-26
 
-Incremented: 81
+Incremented: 82
 
 ## What is this?? 
 Shell scripts to push commits to github errday. Throw it on a server and schedule the script with `cron`
