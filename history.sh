@@ -12,7 +12,18 @@ generate_dates() {
     start=$(gdate -d "$start +1 day" +'%Y%m%d')
   done
 
-  echo ${result[@]}
+  push_github $result
+}
+
+push_github() {
+  result=$1
+
+  for d in ${result[@]}; do
+    sed -i '' 's/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/'$d'/g' HISTORY.md
+    perl -pi -e 's/(Incremented: )([0-9]+)/"Incremented: ".($2+1)/e' HISTORY.md
+    git commit -am "'$d'" ; git push
+
+  done
 }
 
 generate_dates 2015
