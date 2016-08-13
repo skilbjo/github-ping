@@ -1,10 +1,10 @@
 # ping
 
 ## Last updated
-2016-08-12
+2016-08-13
 
 ## Occurances
-Incremented: 256
+Incremented: 257
 
 ## What is this?? 
 Shell scripts to push commits to github errday. Throw it on a server and schedule the script with `cron`
