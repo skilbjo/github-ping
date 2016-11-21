@@ -1,6 +1,6 @@
 #!/bin/bash
 
-generate_dates() {
+generate_dates_mac() {
   year=$1
   start=$(gdate -d $year-01-01 +'%Y%m%d')
   end=$(gdate -d $year-12-31 +'%Y%m%d')
@@ -10,6 +10,21 @@ generate_dates() {
   while [ $start -le $end ]; do
     result+=($(gdate -d $start +'%Y-%m-%d'))
     start=$(gdate -d "$start +1 day" +'%Y%m%d')
+  done
+
+  push_github $result
+}
+
+generate_dates_linux() {
+  year=$1
+  start=$(date -d $year-11-21 +'%Y%m%d')
+  end=$(date -d $year-12-30 +'%Y%m%d')
+
+  local result=()
+
+  while [ $start -le $end ]; do
+    result+=($(date -d $start +'%Y-%m-%d'))
+    start=$(date -d "$start +1 day" +'%Y%m%d')
   done
 
   push_github $result
@@ -26,6 +41,6 @@ push_github() {
   done
 }
 
-generate_dates 2012
+generate_dates_linux 2016
 
 exit 0
