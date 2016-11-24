@@ -1,0 +1,19 @@
+### variables ##
+  PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/skilbjo/bin
+  MAILTO=john.skilbeck@gmail.com
+  app_dir="/home/skilbjo/deploy/app/ping"
+
+
+## jobs ##
+0 2 * * * skilbjo cd "$app_dir" ; ./ping.sh >/dev/null 2>&1
+### SYSADMIN
+* * * * * skilbjo ping -c 1 192.168.1.1 >/dev/null 2>&1
+
+## syntax ##
+# ┌───────────── min (0 - 59)
+# │ ┌────────────── hour (0 - 23)
+# │ │ ┌─────────────── day of month (1 - 31)
+# │ │ │ ┌──────────────── month (1 - 12)
+# │ │ │ │ ┌───────────────── day of week (0 - 6) (Sunday to Saturday;
+# │ │ │ │ │
+# * * * * *  command to execute
