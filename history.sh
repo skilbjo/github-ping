@@ -2,7 +2,7 @@
 
 generate_dates_mac() {
   year=$1
-  start=$(gdate -d $year-11-23 +'%Y%m%d')
+  start=$(gdate -d $year-11-26 +'%Y%m%d')
   end=$(gdate -d $year-12-30 +'%Y%m%d')
 
   local result=()
