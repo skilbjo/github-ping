@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+dir="/home/skilbjo/deploy/app"
+app="ping"
+deploy_dir="$dir/$app"
+cron_dir="/etc/cron.d"
+
+GIT_WORK_TREE="$deploy_dir" git checkout -f
+
+cd "$deploy_dir"
+
+## build steps here ##
+sudo cp lib/crontab "$cron_dir/$app"
+
+echo "all done"
+
+exit 0
+
