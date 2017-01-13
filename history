@@ -27,7 +27,7 @@ generate_dates_linux() {
     start=$(date -d "$start +1 day" +'%Y%m%d')
   done
 
-  push_github $result
+  push_github_linux $result
 }
 
 push_github() {
@@ -35,6 +35,17 @@ push_github() {
 
   for d in ${result[@]}; do
     sed -i '' 's/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/'$d'/g' HISTORY.md
+    perl -pi -e 's/(Incremented: )([0-9]+)/"Incremented: ".($2+1)/e' HISTORY.md
+    git commit --date="$d" -am "'$d'" ; git push
+
+  done
+}
+
+push_github_linux() {
+  result=$1
+
+  for d in ${result[@]}; do
+    sed 's/[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/'$d'/g' HISTORY.md
     perl -pi -e 's/(Incremented: )([0-9]+)/"Incremented: ".($2+1)/e' HISTORY.md
     git commit --date="$d" -am "'$d'" ; git push
 
