@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+set -eou pipefail
 
-dir="/home/skilbjo/deploy/app"
+user=$(whoami)
+dir="/home/${user}/deploy/app"
 app="ping"
 deploy_dir="$dir/$app"
 cron_dir="/etc/cron.d"
@@ -10,7 +12,10 @@ GIT_WORK_TREE="$deploy_dir" git checkout -f
 cd "$deploy_dir"
 
 ## build steps here ##
-sudo cp lib/crontab "$cron_dir/$app"
+case "$user" in
+  (skilbjo) sudo cp lib/crontab "$cron_dir/$app" ;;
+  (pi) sudo cp lib/crontab-rspi "$cron_dir/$app" ;;
+esac
 
 echo "all done"
 
