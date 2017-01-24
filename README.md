@@ -4,7 +4,7 @@
 2017-01-23
 
 ## Occurances
-Incremented: 379
+Incremented: 380
 
 ## What is this??
 Shell scripts to push commits to github errday. Throw it on a server and schedule the script with `cron`
