@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eou pipefail
 
 generate_dates_mac() {
   year=$1
@@ -17,8 +18,8 @@ generate_dates_mac() {
 
 generate_dates_linux() {
   year=$1
-  start=$(date -d $year-02-03 +'%Y%m%d')
-  end=$(date -d $year-02-03 +'%Y%m%d')
+  start=$(date -d $year-02-02 +'%Y%m%d')
+  end=$(date -d $year-02-04 +'%Y%m%d')
 
   local result=()
 
