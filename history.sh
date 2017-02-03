@@ -17,8 +17,8 @@ generate_dates_mac() {
 
 generate_dates_linux() {
   year=$1
-  start=$(date -d $year-01-13 +'%Y%m%d')
-  end=$(date -d $year-01-21 +'%Y%m%d')
+  start=$(date -d $year-02-03 +'%Y%m%d')
+  end=$(date -d $year-02-03 +'%Y%m%d')
 
   local result=()
 
