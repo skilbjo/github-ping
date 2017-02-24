@@ -3,7 +3,7 @@ set -eou pipefail
 
 user=$(whoami)
 dir="/home/${user}/deploy/app"
-app="ping"
+app=$(basename $(dirname $(pwd)) | sed -e 's/.git//')
 deploy_dir="$dir/$app"
 cron_dir="/etc/cron.d"
 
@@ -13,11 +13,10 @@ cd "$deploy_dir"
 
 ## build steps here ##
 case "$user" in
-  (skilbjo) sudo cp lib/crontab "$cron_dir/$app" ;;
-  (pi) sudo cp lib/crontab-rspi "$cron_dir/$app" ;;
+  (skilbjo) sudo cp deploy/tasks/crontab "$cron_dir/$app" ;;
+  (pi) sudo cp deploy/tasks/crontab-rspi "$cron_dir/$app" ;;
 esac
 
 echo "all done"
 
 exit 0
-
