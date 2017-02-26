@@ -3,7 +3,7 @@ set -eou pipefail
 
 user=$(whoami)
 dir="/home/${user}/deploy/app"
-app=$(basename $(dirname $(pwd)) | sed -e 's/.git//')
+app=$(basename $(pwd) | sed -e 's/.git//')
 deploy_dir="$dir/$app"
 cron_dir="/etc/cron.d"
 
