@@ -6,9 +6,7 @@
   app_dir="/home/skilbjo/deploy/app/ping"
 
 ## jobs ##
-0 2 * * * skilbjo cd "$app_dir" ; $cmd >/dev/null 2>&1
-### SYSADMIN
-* * * * * skilbjo ping -c 1 192.168.1.1 >/dev/null 2>&1
+0 2 * * * skilbjo eval "$(keychain --eval id_rsa)" && cd "$app_dir" ; $cmd >/tmp/ping.log 2>&1
 
 ## syntax ##
 # ┌───────────── min (0 - 59)
