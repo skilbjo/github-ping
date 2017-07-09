@@ -6,7 +6,7 @@
   app_dir="/home/skilbjo/deploy/app/ping"
 
 ## jobs ##
-0 2 * * * skilbjo eval "$(keychain --eval id_rsa)" && cd "$app_dir" ; $cmd >/tmp/ping.log 2>&1
+0 2 * * * skilbjo eval "$(keychain --quiet --eval id_rsa)" && cd "$app_dir" ; $cmd >/tmp/ping.log 2>&1
 
 ## syntax ##
 # ┌───────────── min (0 - 59)
