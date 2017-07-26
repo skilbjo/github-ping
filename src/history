@@ -3,8 +3,8 @@ set -eou pipefail
 
 generate_dates_mac() {
   year=$1
-  start=$(gdate -d $year-11-26 +'%Y%m%d')
-  end=$(gdate -d $year-12-30 +'%Y%m%d')
+  start=$(gdate -d $year-07-26 +'%Y%m%d')
+  end=$(gdate -d $year-08-07 +'%Y%m%d')
 
   local result=()
 
@@ -18,8 +18,8 @@ generate_dates_mac() {
 
 generate_dates_linux() {
   year=$1
-  start=$(date -d $year-03-14 +'%Y%m%d')
-  end=$(date -d $year-03-16 +'%Y%m%d')
+  start=$(date -d $year-07-26 +'%Y%m%d')
+  end=$(date -d $year-08-07 +'%Y%m%d')
 
   local result=()
 
