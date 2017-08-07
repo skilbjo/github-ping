@@ -6,7 +6,7 @@
   app_dir="/home/pi/deploy/app/ping"
 
 ## jobs ##
-0 2 * * * pi eval "$(keychain --quiet --eval id_rsa)" && cd "$app_dir" ; $cmd >/dev/null 2>&1
+0 2 * * * pi eval "$(keychain --eval id_rsa)" && cd "$app_dir" ; $cmd >/dev/null 2>&1
 
 ## syntax ##
 # ┌───────────── min (0 - 59)
