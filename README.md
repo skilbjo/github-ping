@@ -1,12 +1,12 @@
 # ping
 
 ## Last updated
-2017-12-31
+2018-01-01
 
 <<<<<<< HEAD
-Incremented: 146
+Incremented: 147
 =======
-Incremented: 300
+Incremented: 301
 >>>>>>> 75f78c925494371822899e9424571492e0a08f2f
 
 ## What is this?? 
