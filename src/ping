@@ -7,4 +7,4 @@ perl -pi -e 's/(Incremented: )([0-9]+)/"Incremented: ".($2+1)/e' README.md
 
 git commit -am "'$(date +%Y-%m-%d)'" && \
   git push && \
-  curl -fsS --retry 3 "https://hchk.io/${healthchecks_io_github_ping}" >/dev/null
+  curl -fsS --retry 3 "https://hchk.io/${healthchecks_io_github_ping}"
